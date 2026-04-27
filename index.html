@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trust Intelligence — Steve Wee | Daily CMO</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0e0e0e;
+    --paper: #f5f0e8;
+    --gold: #c9963a;
+    --gold-light: #e8c074;
+    --cream: #faf7f2;
+    --muted: #7a7060;
+  }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .nav-logo {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .nav-tag {
+    font-size: 12px;
+    color: rgba(245,240,232,0.4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    padding: 6px 18px;
+    border: 1px solid rgba(201,150,58,0.35);
+    border-radius: 2px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 6vw, 68px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+    margin-bottom: 24px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: rgba(245,240,232,0.6);
+    max-width: 560px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+  }
+
+  /* FORM */
+  .form-wrap {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    padding: 36px 40px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .form-label {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.45);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .form-row {
+    margin-bottom: 16px;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 4px;
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  input::placeholder { color: rgba(245,240,232,0.25); }
+  input:focus { border-color: var(--gold); }
+
+  .cta-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--gold);
+    border: none;
+    border-radius: 4px;
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 8px;
+  }
+  .cta-btn:hover { background: var(--gold-light); }
+  .cta-btn:active { transform: scale(0.99); }
+
+  .form-footer {
+    font-size: 12px;
+    color: rgba(245,240,232,0.3);
+    text-align: center;
+    margin-top: 14px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 60px auto;
+    opacity: 0.4;
+  }
+
+  /* STORY */
+  .story {
+    max-width: 660px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .story p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.75);
+    margin-bottom: 20px;
+  }
+
+  .story p strong {
+    color: var(--paper);
+    font-weight: 500;
+  }
+
+  /* WHAT YOU'LL LEARN */
+  .learn {
+    background: rgba(201,150,58,0.06);
+    border-top: 1px solid rgba(201,150,58,0.2);
+    border-bottom: 1px solid rgba(201,150,58,0.2);
+    padding: 60px 40px;
+    margin: 0 0 60px;
+  }
+
+  .learn-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .learn h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 36px;
+  }
+
+  .learn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .learn-grid { grid-template-columns: 1fr; }
+    nav { padding: 16px 20px; }
+    .hero, .story { padding-left: 24px; padding-right: 24px; }
+    .form-wrap { padding: 28px 24px; }
+    .learn { padding: 40px 24px; }
+  }
+
+  .learn-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .learn-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    background: rgba(201,150,58,0.15);
+    border: 1px solid rgba(201,150,58,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .learn-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--gold);
+  }
+
+  .learn-item p {
+    font-size: 15px;
+    color: rgba(245,240,232,0.75);
+    line-height: 1.6;
+  }
+
+  .learn-item p strong {
+    display: block;
+    color: var(--paper);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  /* CREDIBILITY */
+  .cred {
+    max-width: 720px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cred-pill {
+    padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 40px;
+    font-size: 13px;
+    color: rgba(245,240,232,0.5);
+    white-space: nowrap;
+  }
+
+  .cred-pill span {
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  /* SPEAKER CARD */
+  .speaker {
+    max-width: 660px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+  }
+
+  .speaker-avatar {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c9963a 0%, #7a5a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--ink);
+    font-weight: 900;
+  }
+
+  .speaker-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--paper);
+    margin-bottom: 4px;
+  }
+
+  .speaker-info .role {
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+
+  .speaker-info p {
+    font-size: 14px;
+    color: rgba(245,240,232,0.55);
+    line-height: 1.6;
+  }
+
+  /* BOTTOM CTA */
+  .bottom-cta {
+    background: rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .bottom-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 16px;
+  }
+
+  .bottom-cta p {
+    font-size: 16px;
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 40px;
+  }
+
+  footer {
+    padding: 24px 40px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    font-size: 12px;
+    color: rgba(245,240,232,0.25);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Daily CMO</div>
+  <div class="nav-tag">Free Session — Limited Seats</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow">Live Session with Steve Wee</div>
+  <h1>Why Some Conversations Turn Into Deals — and Others <em>Just Die</em></h1>
+  <p class="hero-sub">A neuroscience-backed framework for turning conversations into partnerships, clients, and opportunities.</p>
+
+  <div class="form-wrap">
+    <div class="form-row">
+      <label class="form-label">Your Name</label>
+      <input type="text" placeholder="What should we call you?">
+    </div>
+    <div class="form-row">
+      <label class="form-label">Email Address</label>
+      <input type="email" placeholder="Your best email">
+    </div>
+    <button class="cta-btn">Reserve My Spot →</button>
+    <p class="form-footer">Free to attend. No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STORY -->
+<section class="story">
+  <div class="section-label">About this session</div>
+
+  <p>For the last 24 years, Steve has built his career and entire network through one thing – communication.</p>
+
+  <p>He started out as a flight attendant with Singapore Airlines. The job was more than just serving meals at 30,000 feet. It placed him in a room with hundreds of strangers, every single day. Very quickly, Steve learnt to read people, handle people, and earn trust fast.</p>
+
+  <p>That experience stuck with him.</p>
+
+  <p>He moved into personal branding and spent the next decade helping <strong>leaders and CEOs</strong> sharpen how they sell, connect, and influence.</p>
+
+  <p>After being in thousands of conversations, he noticed something. Some conversations naturally turn into deals and partnerships. Others just fade out — even when both sides seem interested.</p>
+
+  <p>So he built the <strong>Trust Intelligence framework</strong> to help leaders shape their conversations and close more deals.</p>
+
+  <p>In this session, Steve shares exactly what makes someone trust you — and how to use neuroscience to close more deals.</p>
+</section>
+
+<!-- WHAT YOU'LL LEARN -->
+<section class="learn">
+  <div class="learn-inner">
+    <div class="section-label">What you'll walk away with</div>
+    <h2>A practical system you can use in your next conversation.</h2>
+    <div class="learn-grid">
+      <div class="learn-item">
+        <div class="learn-icon">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.9 3.8 4.2.6-3 3 .7 4.2L8 10.5l-3.8 2 .7-4.2-3-3 4.2-.6z"/></svg>
+        </div>
+        <p><strong>Why conversations stall</strong>The invisible trust gaps that quietly kill deals — even when both sides want to move forward.</p>
+      </div>
+      <div class="learn-item">
+        <div class="learn-icon">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.9 3.8 4.2.6-3 3 .7 4.2L8 10.5l-3.8 2 .7-4.2-3-3 4.2-.6z"/></svg>
+        </div>
+        <p><strong>The V.I.T.A.L model</strong>A 5-factor diagnostic framework for understanding exactly where trust breaks down in any conversation.</p>
+      </div>
+      <div class="learn-item">
+        <div class="learn-icon">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.9 3.8 4.2.6-3 3 .7 4.2L8 10.5l-3.8 2 .7-4.2-3-3 4.2-.6z"/></svg>
+        </div>
+        <p><strong>How neuroscience drives buying decisions</strong>What's actually happening in someone's brain when they decide to trust you — or not.</p>
+      </div>
+      <div class="learn-item">
+        <div class="learn-icon">
+          <svg viewBox="0 0 16 16"><path d="M8 1l1.9 3.8 4.2.6-3 3 .7 4.2L8 10.5l-3.8 2 .7-4.2-3-3 4.2-.6z"/></svg>
+        </div>
+        <p><strong>How to close more without selling harder</strong>Practical shifts that make you more influential in sales, networking, and partnerships.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIBILITY PILLS -->
+<div class="cred">
+  <div class="cred-pill"><span>500+</span> talks delivered</div>
+  <div class="cred-pill"><span>100+</span> events hosted</div>
+  <div class="cred-pill"><span>1M+</span> people reached across Asia</div>
+  <div class="cred-pill"><span>24 years</span> in communication</div>
+</div>
+
+<!-- SPEAKER CARD -->
+<div class="speaker">
+  <div class="speaker-avatar">S</div>
+  <div class="speaker-info">
+    <h3>Steve Wee</h3>
+    <div class="role">Creator of Trust Intelligence (TQ) · Founder, High Flyer Asia</div>
+    <p>Entrepreneur, human communication researcher, and one of Asia's most prolific speakers on trust and relationship-building in business.</p>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <h2>Your next conversation could be your next deal.</h2>
+  <p>Reserve your free spot now. This session won't be recorded.</p>
+  <div class="form-wrap" style="max-width:420px;">
+    <div class="form-row">
+      <label class="form-label">Your Name</label>
+      <input type="text" placeholder="What should we call you?">
+    </div>
+    <div class="form-row">
+      <label class="form-label">Email Address</label>
+      <input type="email" placeholder="Your best email">
+    </div>
+    <button class="cta-btn">Reserve My Spot →</button>
+    <p class="form-footer">Free to attend. No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© Daily CMO · dailycmo.net</p>
+  <p>A Daily CMO Event</p>
+</footer>
+
+</body>
+</html>
